@@ -24,7 +24,7 @@ def login_page():
     else:
         flash('Заполните все поля')
 
-    return render_template('login_page.html')
+    return render_template('login_page.html', title='Вход')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -36,15 +36,22 @@ def register():
         
         if login == 'admin':
             new_user = User(login=login, password=hash_pwd, role='admin')
+
+            db.session.add(new_user)
+            db.session.commit()
+
+            return redirect(url_for('login_page'))
         else:
             new_user = User(login=login, password=hash_pwd)
 
-        db.session.add(new_user)
-        db.session.commit()
+            db.session.add(new_user)
+            db.session.commit()
 
-        return redirect(url_for('login_page'))
+            return redirect(url_for('login_page'))
+
+        
     
-    return render_template('register.html')
+    return render_template('register.html', title='Регистрация')
 
 @app.route('/logout', methods=['GET', 'POST'])
 @login_required
