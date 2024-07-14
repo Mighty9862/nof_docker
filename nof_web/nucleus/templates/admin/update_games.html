@@ -1,0 +1,36 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<section>
+   <div class="container mt-4">
+      <h2>Изменить мероприятие</h2>
+      <div class="admin-banner">
+         Это аккаунт действующего администратора.
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <form method="POST" enctype="multipart/form-data">
+               <div class="mb-3">
+                  <label for="username" class="form-label">Название мероприятия:</label>
+                  <input type="text" class="form-control" id="event-name" name="title" value="{{game.title}}">
+               </div>
+               <div class="mb-3">
+                  <label for="info" class="form-label">Описание:</label>
+                  <textarea class="form-control" id="info" name="body" rows="3">{{game.body}}</textarea>
+               </div>
+               <div class="mb-3">
+                  <label for="img" class="form-label">Изображение</label>
+                  <input type="file" class="form-control" id="event-name" name="img" value="{{game.img}}">
+               </div>
+               <button type="submit" class="btn btn-primary">Обновить</button>
+            </form>
+            <a href="{{url_for('games_list')}}" class="btn btn-secondary mt-2">Назад</a>
+
+         </div>
+      </div>
+   </div>
+
+</section>
+
+{% endblock %}

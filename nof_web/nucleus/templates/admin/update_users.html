@@ -1,0 +1,79 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<section>
+    <div class="container mt-4">
+      <h2>Редактировать данные пользователя</h2>
+      <div class="admin-banner">
+        Это аккаунт действующего администратора.
+      </div>
+      <div class="container-fluid mt-4">
+        <div class="row">
+          <div class="col-lg-1"></div>
+    
+          <div class="col-lg-10 col-md-12">
+          <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+              <label for="username" class="form-label">Фамилия:</label>
+              <input type="text" class="form-control" id="event-name" name="last_name" value="{{user.last_name}}">
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Имя:</label>
+              <input type="text" class="form-control" id="event-name" name="first_name" value="{{user.first_name}}">
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Отчество:</label>
+              <input type="text" class="form-control" id="event-name" name="middle_name" value="{{user.middle_name}}">
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Логин:</label>
+              <input type="text" class="form-control" id="event-name" name="login" value="{{user.login}}">
+            </div>
+            <div class="mb-3 selecter">
+              <select class="form-select" aria-label="Default select example" name="faculty">
+                <option selected value="{{user.faculty}}">{{user.faculty}}</option>
+                <option value="ФПСОИБ">ФПСОИБ</option>
+                <option value="ФПСПЭБиПК">ФПСПЭБиПК</option>
+                <option value="МПФ">МПФ</option>
+                <option value="ИПСД ОВД">ИПСД ОВД</option>
+                <option value="ИПСОПР">ИПСОПР</option>
+                <option value="ФПСОПП">ФПСОПП</option>
+                <option value="ИСЭ">ИСЭ</option>
+                <option value="ФПСППООП">ФПСППООП</option>
+                <option value="ФПИС">ФПИС</option>
+              </select>
+            </div>
+            <div class="mb-3 selecter">
+              <select class="form-select" aria-label="Default select example" name="course">
+                <option selected value="{{user.course}}">{{user.course}}</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="username" class="form-label">Начислить баллы:</label>
+              <input type="number" class="form-control" style="width: 100px;" value="0" name="rating">
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="user" checked>
+              <label class="form-check-label" for="flexRadioDefault1" checked>Пользователь</label>
+           </div>
+           <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="admin">
+              <label class="form-check-label" for="flexRadioDefault2">Администратор</label>
+           </div>
+            <button type="submit" class="btn btn-primary">Обновить</button>
+          </form>
+          <a href="{{url_for('users_list')}}" class="btn btn-secondary mt-2">Выйти</a>
+  
+        </div>
+        <div class="col-lg-1"></div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

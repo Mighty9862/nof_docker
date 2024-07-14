@@ -1,0 +1,103 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+       <div class="col-lg-1"></div>
+
+       <div class="col-lg-10 col-md-12">
+          <h2>Личный кабинет</h2>
+                     <div class="card-body p-4">
+                       <div class="d-flex">
+                         <div class="flex-shrink-0">
+                           <img src="{{user.img}}"
+                             alt="Аватар курсанта" class="img-fluid"
+                             style="width: 180px; border-radius: 10px;" />
+                         </div>
+                         <div class="flex-grow-1 ms-3">
+                           <h5 class="mb-1">{{user.last_name}} {{user.first_name}} {{user.middle_name}}</h5>
+                           <p class="mb-2 pb-1">
+                             Курсант
+                           </p>
+                           <div class="d-flex justify-content-start rounded-3 p-2 mb-2 bg-body-tertiary">
+                             <div>
+                               <p class="small text-muted mb-1">
+                                 Баллы
+                               </p>
+                               <p class="mb-0 mx-1">{{user.rating}}</p>
+                             </div>
+                             <div class="px-3">
+                               <p class="small text-muted mb-1 mx-3">
+                                 Факультет
+                               </p>
+                               <p class="mb-0 mx-3">{{user.faculty}}</p>
+                             </div>
+                             <div>
+                               <p class="small text-muted mb-1">
+                                 Курс
+                               </p>
+                               <p class="mb-0 mx-2">{{user.course}}</p>
+                             </div>
+                           </div>
+                           <a href="#" class="btn btn-primary">Достижения</a>
+                         </div>
+                       </div>
+                     </div>
+
+
+
+
+          <h4>Участие в мероприятиях:</h4>
+          <table class="table">
+             <thead>
+                <tr>
+                   <th scope="col">#</th>
+                   <th scope="col">Мероприятие</th>
+                   <th scope="col">Действия</th>
+                </tr>
+             </thead>
+             <tbody>
+                <tr>
+                   <th scope="row">1</th>
+                   <td>GIGA CONF</td>
+                   <td>
+                      <button type="submit" class="btn btn-primary exit-btn">
+                         X Отказаться
+                      </button>
+                   </td>
+                </tr>
+                <tr>
+                   <th scope="row">2</th>
+                   <td>Цифровая криминалистика</td>
+                   <td>
+                      <button type="submit" class="btn btn-primary exit-btn">
+                         X Отказаться
+                      </button>
+                   </td>
+                </tr>
+                <tr>
+                   <th scope="row">3</th>
+                   <td>MTS True Tech Day</td>
+                   <td>
+                      <button type="submit" class="btn btn-primary exit-btn">
+                         X Отказаться
+                      </button>
+                   </td>
+                </tr>
+                <tr>
+                   <th scope="row">4</th>
+                   <td>Tinkoff CTF</td>
+                   <td>
+                      <button type="submit" class="btn btn-primary exit-btn">
+                         X Отказаться
+                      </button>
+                   </td>
+                </tr>
+             </tbody>
+          </table>
+       </div>
+       <div class="col-lg-1"></div>
+    </div>
+
+{% endblock %}

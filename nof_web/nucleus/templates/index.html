@@ -1,0 +1,43 @@
+{% extends "navbar.html" %}
+
+<body>
+  <!-- Навигация -->
+  {% block content %}
+    <!-- Основной контент -->
+    <section>
+
+      <div class="container-fluid mt-4">
+        <div class="row">
+          <div class="col-lg-1">
+          </div>
+  
+          <div class="col-lg-10 col-md-12">
+            <div class="row">
+              <!-- Карты новостей -->
+
+              {% for post in posts %}
+              <div class="col-lg-3 col-md-6 mb-4">
+                <a href="{{ url_for('news', news_id=post.id) }}" target="_blank">
+                  <div class="card">
+                    <img src="{{post.img}}" class="card-img-top" alt="GGCNF" />
+                    <div class="card-body">
+                      <button class="btn btn-primary">{{post.status}}</button>
+                      <h5 class="card-title">{{post.title}}</h5>
+                      <p class="card-text">
+                        {{ post.short_body }}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              {% endfor %}
+              
+            </div>
+          </div>
+          <div class="col-lg-1 col-md-12">
+          </div>
+        </div>
+    </section>
+    
+  {% endblock %}
+</body>

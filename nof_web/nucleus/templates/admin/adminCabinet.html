@@ -1,0 +1,29 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+<section>
+   <div class="container mt-4">
+      <h2>Добавить новость</h2>
+      <div class="admin-banner">
+         Это аккаунт действующего администратора.
+      </div>
+      <div class="row">
+         <div class="col-md-12">
+            <div class="mb-3">
+               <h5>Выберите действие:</h5>
+            </div>
+            <div class="mb-3">
+               <a href="{{url_for('create_news')}}"><button class="btn btn-primary">Создать новость</button></a>
+               <a href="{{url_for('create_games')}}"><button class="btn btn-primary">Создать мероприятие</button></a>
+            </div>
+            <div class="mb-3">
+            <a href="{{url_for('news_list')}}"><button class="btn btn-primary">Редактировать новость</button></a>
+            <a href="{{url_for('games_list')}}"><button class="btn btn-primary">Редактировать мероприятие</button></a>
+         </div>
+            <a href="{{url_for('home')}}" class="btn btn-secondary mt-2">Выйти</a>
+         </div>
+      </div>
+   </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+.idea/
+.vscode/
+.venv*/
+venv*/
+__pycache__/
+dist/
+.coverage*
+htmlcov/
+.tox/
+docs/_build/
+nof_web/instance/
+nof_web/nucleus/static/images/games/*
+nof_web/nucleus/static/images/news/*
+nof_web/nucleus/static/images/users/*
+
+# exception to the rule
+!nof_web/nucleus/static/images/games/.gitkeep
+!nof_web/nucleus/static/images/news/.gitkeep
+!nof_web/nucleus/static/images/users/.gitkeep

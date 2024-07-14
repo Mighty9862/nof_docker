@@ -1,0 +1,33 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+<div class="container mt-4">
+  <div id="auth-section">
+      <div id="login-section">
+          <form method="POST" class="user-container">
+              <h2>Регистрация</h2>
+              <div class="mb-3">
+                  <label for="login_username" class="form-label">Имя пользователя:</label>
+                  <input type="text" class="form-control" id="login_username" name="login2" required>
+              </div>
+              <div class="mb-3">
+                  <label for="login_password" class="form-label">Пароль:</label>
+                  <input type="password" class="form-control" id="login_password" name="password2" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Войти</button>
+          </form>
+      </div>
+  </div>
+</div>
+{% endblock %}
