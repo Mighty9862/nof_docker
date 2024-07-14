@@ -33,7 +33,12 @@ def register():
     
     if request.method == 'POST':
         hash_pwd = generate_password_hash(password)
-        new_user = User(login=login, password=hash_pwd)
+        
+        if login == 'admin':
+            new_user = User(login=login, password=hash_pwd, role='admin')
+        else:
+            new_user = User(login=login, password=hash_pwd)
+
         db.session.add(new_user)
         db.session.commit()
 
