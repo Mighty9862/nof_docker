@@ -31,8 +31,6 @@ class User(db.Model, UserMixin):
     course = db.Column(db.String(128), nullable=True)
     rating = db.Column(db.Integer, nullable=False, default=0)
 
-    img = db.Column(db.String(128), nullable=True)
-
     role = db.Column(db.String(128), nullable=False, default='user')
 
 

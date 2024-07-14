@@ -15,7 +15,10 @@ manager = LoginManager(app)
 from nucleus import models, routes, errors
 from nucleus.plugins import login, admin
 from nucleus.user import profile
+from nucleus.plugins.test import create_data_from_bd
 
 
 with app.app_context():
         db.create_all()
+        create_data_from_bd()
+

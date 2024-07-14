@@ -34,20 +34,12 @@ def register():
     if request.method == 'POST':
         hash_pwd = generate_password_hash(password)
         
-        if login == 'admin':
-            new_user = User(login=login, password=hash_pwd, role='admin')
+        new_user = User(login=login, password=hash_pwd)
 
-            db.session.add(new_user)
-            db.session.commit()
+        db.session.add(new_user)
+        db.session.commit()
 
-            return redirect(url_for('login_page'))
-        else:
-            new_user = User(login=login, password=hash_pwd)
-
-            db.session.add(new_user)
-            db.session.commit()
-
-            return redirect(url_for('login_page'))
+        return redirect(url_for('login_page'))
 
         
     
