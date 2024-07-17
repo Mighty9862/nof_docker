@@ -1,0 +1,42 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+
+   <div class="container-fluid mt-4">
+      <div class="row">
+         <div class="col-lg-1"></div>
+
+         <div class="col-lg-10 col-md-12">
+            <h2>Рейтинг пользователей</h2>
+            <table class="table table-striped caption-top">
+               <caption class="plate-caption plate">Рейтинг по количеству набранных баллов</caption>
+               <thead>
+                  <tr>
+                     <th scope="col">#</th>
+                     <th scope="col">Фамилия</th>
+                     <th scope="col">Имя</th>
+                     <th scope="col">Отчество</th>
+                     <th scope="col">Факультет</th>
+                     <th scope="col">Курс</th>
+                     <th scope="col">Баллы</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <th scope="row">1</th>
+                     <td>{{user.last_name}}</td>
+                     <td>{{user.first_name}}</td>
+                     <td>{{user.middle_name}}</td>
+                     <td>{{user.faculty}}</td>
+                     <td>{{user.course}}</td>
+                     <td>{{user.rating}}</td>
+                  </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+</body>
+
+{% endblock %}

@@ -154,6 +154,12 @@ transition: 0.5s;
    height: 39px;
 }
 
+.plate-caption {
+  line-height: 20px;
+width: 350px;
+height: 39px;
+}
+
 .data-bs-target {
    color: rgb(177,184,203);
 }
