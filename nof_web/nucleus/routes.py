@@ -2,6 +2,7 @@ from flask import render_template, request, redirect, flash, url_for
 from flask_login import login_user, login_required, logout_user, current_user
 from werkzeug.security import check_password_hash, generate_password_hash
 from nucleus.decorators import is_admin
+from sqlalchemy import desc
 
 
 from nucleus import app, db
@@ -23,3 +24,7 @@ def news(news_id):
     post = Post.query.filter_by(id=news_id).one()
     return render_template('news.html', post=post, title='Новости', status1='active')
 
+@app.route('/raiting')
+def rating():
+    users = User.query.order_by(desc(User.rating)).all()
+    return render_template('user/userRating.html', users=users, title='Рейтинг', status5='active')
