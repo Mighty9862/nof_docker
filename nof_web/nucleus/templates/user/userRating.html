@@ -22,10 +22,10 @@
                   </tr>
                </thead>
                <tbody>
-                  {% set iterated = 0 %}
+
                   {% for user in users %}
                      <tr>
-                        <th scope="row">{{iterated}} {% set iterated = iterated + 2 %}</th>
+                        <th scope="row">{{ loop.index }}</th>
                         
                         <td>{{user.last_name}}</td>
                         <td>{{user.first_name}}</td>
