@@ -14,7 +14,7 @@ def login_page():
         user = User.query.filter_by(login=login).first()
 
         if user and check_password_hash(user.password, password):
-            login_user(user)
+            login_user(user) 
 
             next_page = request.args.get('next')
 

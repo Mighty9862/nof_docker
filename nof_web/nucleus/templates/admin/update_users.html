@@ -58,14 +58,29 @@
               <label for="username" class="form-label">Начислить баллы:</label>
               <input type="number" class="form-control" style="width: 100px;" value="0" name="rating">
             </div>
+          {% if user.role == 'admin' %}
+
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="user" checked>
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="user" >
               <label class="form-check-label" for="flexRadioDefault1" checked>Пользователь</label>
            </div>
            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="admin">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="admin" checked>
               <label class="form-check-label" for="flexRadioDefault2">Администратор</label>
            </div>
+
+          {% else %}
+
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="user" checked>
+            <label class="form-check-label" for="flexRadioDefault1" checked>Пользователь</label>
+         </div>
+         <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="admin">
+            <label class="form-check-label" for="flexRadioDefault2">Администратор</label>
+         </div>
+
+          {% endif %}
             <button type="submit" class="btn btn-primary">Обновить</button>
           </form>
           <a href="{{url_for('users_list')}}" class="btn btn-secondary mt-2">Выйти</a>
