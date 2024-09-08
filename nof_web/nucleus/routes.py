@@ -13,26 +13,33 @@ def home():
     posts = Post.query.all()
     return render_template('index.html', posts=posts, title='Новости', status1='active')
 
+
 @app.route('/games')
 @login_required 
 def games():    
     posts = Post_Games.query.all()
-    return render_template('games.html', posts=posts, title='Игры', status2='active')
+    user_events = {event.event_id for event in UserEvent.query.filter_by(user_id=current_user.id).all()}
+    return render_template('games.html', posts=posts, user_events=user_events, title='Игры', status2='active')
 
-@app.route('/participate/<int:event_id>', methods=['POST'])
+
+@app.route('/join_event/<int:event_id>')
 @login_required
-def participate(event_id):
-    event = Post_Games.query.get_or_404(event_id)
-    existing_participation = UserEvent.query.filter_by(user_id=current_user.id, event_id=event_id).first()
-
-    if not existing_participation:
+def join_event(event_id):
+    # Проверка, не участвует ли уже пользователь
+    if not UserEvent.query.filter_by(user_id=current_user.id, event_id=event_id).first():
         participation = UserEvent(user_id=current_user.id, event_id=event_id)
         db.session.add(participation)
         db.session.commit()
-        flash("Спасибо за участие!", "success")
-    else:
-        flash("Вы уже участвуете в этом мероприятии.", "warning")
+    return redirect(url_for('games'))
 
+@app.route('/leave_event/<int:event_id>')
+@login_required
+def leave_event(event_id):
+    # Найти запись об участии
+    participation = UserEvent.query.filter_by(user_id=current_user.id, event_id=event_id).first()
+    if participation:
+        db.session.delete(participation)
+        db.session.commit()
     return redirect(url_for('games'))
 
 

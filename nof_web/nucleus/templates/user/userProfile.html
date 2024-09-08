@@ -64,7 +64,7 @@
                   <td>{{ event.event.title }}</td>
                   <td>
                      <form action="{{ url_for('withdraw', event_id=event.event.id) }}" method="POST">
-                        <button type="submit" class="btn btn-primary">Отказаться</button>
+                        <button type="submit" class="btn exit-btn">Отказаться</button>
                      </form>
                   </td>
                </tr>

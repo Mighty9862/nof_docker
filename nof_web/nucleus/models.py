@@ -43,6 +43,7 @@ class UserEvent(db.Model):
     event = db.relationship('Post_Games', backref=db.backref('participants', lazy=True))
 
 
+
 @manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)

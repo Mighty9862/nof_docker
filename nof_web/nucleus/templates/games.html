@@ -17,21 +17,22 @@
             <div class="row">
 
               {% for post in posts %}
-              <div class="col-lg-6 col-md-6 mb-4">
-                <div class="card game-card">
-                  <img src="{{post.img}}" class="card-img-top" alt="Pravo" />
-                  <div class="card-body">
-                    <h5 class="card-title">{{post.title}}</h5>
-                    <p class="card-text">
-                      {{post.body}}
-                    </p>
-                    <form action="{{ url_for('participate', event_id=post.id) }}" method="POST">
-                      <button type="submit" class="btn btn-primary">Принять участие</button>
-                    </form>
-                  </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="card game-card">
+                        <img src="{{post.img}}" class="card-img-top" alt="Game Image" />
+                        <div class="card-body">
+                            <h5 class="card-title">{{post.title}}</h5>
+                            <p class="card-text">{{post.body}}</p>
+                            
+                            {% if post.id in user_events %}
+                                <a href="{{ url_for('leave_event', event_id=post.id) }}" class="btn exit-btn">Отказаться от участия</a>
+                            {% else %}
+                                <a href="{{ url_for('join_event', event_id=post.id) }}" class="btn btn-primary">Принять участие</a>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
-              </div>
-              {% endfor %}
+            {% endfor %}
 
             </div>
 
