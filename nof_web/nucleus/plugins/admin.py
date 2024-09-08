@@ -303,6 +303,6 @@ def view_participants(games_id):
 
     users = [User.query.get(participant.user_id) for participant in participants]
 
-    return render_template('/admin/participantsGames.html', game=game, participants=users)
+    return render_template('/admin/participantsGames.html', game=game, participants=users, title='Список участников')
 
 
