@@ -5,7 +5,7 @@ from nucleus.decorators import is_admin
 
 
 from nucleus import app, db
-from nucleus.models import Post, Post_Games, User
+from nucleus.models import Post, Post_Games, User, UserEvent
 
 def create_data_from_bd():
     hash_pwd = generate_password_hash('admin')
@@ -18,6 +18,7 @@ def create_data_from_bd():
     User.query.delete()
     Post.query.delete()
     Post_Games.query.delete()
+    UserEvent.query.delete()
 
     db.session.add(new_user)
     db.session.add(new_user2)
