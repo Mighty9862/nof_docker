@@ -34,6 +34,15 @@ class User(db.Model, UserMixin):
     role = db.Column(db.String(128), nullable=False, default='user')
 
 
+class UserEvent(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    event_id = db.Column(db.Integer, db.ForeignKey('post__games.id'))
+    
+    user = db.relationship('User', backref=db.backref('events', lazy=True))
+    event = db.relationship('Post_Games', backref=db.backref('participants', lazy=True))
+
+
 @manager.user_loader
 def load_user(user_id):
     return User.query.get(user_id)

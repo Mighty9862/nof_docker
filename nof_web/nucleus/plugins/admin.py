@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 import os
 
 from nucleus import app, db
-from nucleus.models import Post, Post_Games, User
+from nucleus.models import Post, Post_Games, User, UserEvent
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -293,5 +293,16 @@ def search_users(last_name):
     users = User.query.filter_by(last_name=last_name).all()
         
     return render_template('/admin/adminUserSearch.html', users=users, title='Поиск пользователей') 
+
+
+@app.route('/participants/<int:games_id>')
+@is_admin
+def view_participants(games_id):
+    game = Post_Games.query.get_or_404(games_id)
+    participants = UserEvent.query.filter_by(event_id=games_id).all()
+
+    users = [User.query.get(participant.user_id) for participant in participants]
+
+    return render_template('/admin/participantsGames.html', game=game, participants=users)
 
 

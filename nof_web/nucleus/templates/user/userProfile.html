@@ -58,42 +58,18 @@
                 </tr>
              </thead>
              <tbody>
-                <tr>
-                   <th scope="row">1</th>
-                   <td>GIGA CONF</td>
-                   <td>
-                      <button type="submit" class="btn btn-primary exit-btn">
-                         X Отказаться
-                      </button>
-                   </td>
-                </tr>
-                <tr>
-                   <th scope="row">2</th>
-                   <td>Цифровая криминалистика</td>
-                   <td>
-                      <button type="submit" class="btn btn-primary exit-btn">
-                         X Отказаться
-                      </button>
-                   </td>
-                </tr>
-                <tr>
-                   <th scope="row">3</th>
-                   <td>MTS True Tech Day</td>
-                   <td>
-                      <button type="submit" class="btn btn-primary exit-btn">
-                         X Отказаться
-                      </button>
-                   </td>
-                </tr>
-                <tr>
-                   <th scope="row">4</th>
-                   <td>Tinkoff CTF</td>
-                   <td>
-                      <button type="submit" class="btn btn-primary exit-btn">
-                         X Отказаться
-                      </button>
-                   </td>
-                </tr>
+               {% for event in user.events %}
+               <tr>
+                  <th scope="row">{{ loop.index }}</th>
+                  <td>{{ event.event.title }}</td>
+                  <td>
+                     <form action="{{ url_for('withdraw', event_id=event.event.id) }}" method="POST">
+                        <button type="submit" class="btn btn-primary">Отказаться</button>
+                     </form>
+                  </td>
+               </tr>
+               {% endfor %}
+               
              </tbody>
           </table>
        </div>

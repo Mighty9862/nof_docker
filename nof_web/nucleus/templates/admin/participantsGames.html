@@ -1,0 +1,33 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+   <div class="container-fluid mt-4">
+      <div class="row">
+         <div class="col-lg-1"></div>
+         <div class="col-lg-10 col-md-12">
+            <h2>Участники мероприятия: {{ game.title }}</h2>
+            <a href="{{ url_for('home') }}" class="btn btn-secondary my-3">Назад</a>
+            <table class="table">
+               <thead>
+                  <tr>
+                     <th scope="col">#</th>
+                     <th scope="col">ФИО</th>
+                     <th scope="col">Факультет</th>
+                     <th scope="col">Курс</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  {% for user in participants %}
+                  <tr>
+                     <th scope="row">{{ loop.index }}</th>
+                     <td>{{ user.last_name }} {{ user.first_name }} {{ user.middle_name }}</td>
+                     <td>{{ user.faculty }}</td>
+                     <td>{{ user.course }}</td>
+                  </tr>
+                  {% endfor %}
+               </tbody>
+            </table>
+         </div>
+      </div>
+   </div>
+{% endblock %}

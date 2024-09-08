@@ -25,8 +25,9 @@
                     <p class="card-text">
                       {{post.body}}
                     </p>
-                    <a href="#" class="btn btn-primary">Хочу принять участие</a>
-                    <a href="#" class="btn btn-primary">Не интересно</a>
+                    <form action="{{ url_for('participate', event_id=post.id) }}" method="POST">
+                      <button type="submit" class="btn btn-primary">Принять участие</button>
+                    </form>
                   </div>
                 </div>
               </div>
