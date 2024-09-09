@@ -1,37 +1,30 @@
-{% extends "navbar.html" %}
-
-{% block content %}
+{% extends "navbar.html" %} {% block content %}
 <style>
-    .card-img-top {
-      height: 650px;
-      object-fit: cover;
-    }
+  .card-img-top {
+    height: 650px;
+    object-fit: cover;
+  }
 </style>
 
+<!-- Основной контент -->
+<section>
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <div class="col-lg-1"></div>
 
-  
-  <!-- Основной контент -->
-  <section>
-    <div class="container-fluid mt-4">
-      <div class="row">
-        <div class="col-lg-1"></div>
+      <div class="col-lg-10 col-md-12">
+        <div class="plate">{{post.status}}</div>
+        <h1 class="card-title mb-4">
+          <b>{{post.short_body}}</b>
+        </h1>
+        <p class="data-bs-target">27 июня 2024</p>
+        <img src="{{post.img}}" class="card-img-top mb-4" alt="giga conf" />
 
-        <div class="col-lg-10 col-md-12">
-          <div class="plate">{{post.status}}</div>
-          <h1 class="card-title mb-4">
-            <b>{{post.short_body}}</b>
-          </h1>
-          <p class="data-bs-target">27 июня 2024</p>
-          <img src="{{post.img}}" class="card-img-top mb-4" alt="giga conf" />
-
-          <p class="card-text my-4">
-            {{post.full_body}}
-          </p>
-          
-        </div>
-
-        <div class="col-lg-1 col-md-12"></div>
+        <p class="card-text my-4">{{post.full_body}}</p>
       </div>
+
+      <div class="col-lg-1 col-md-12"></div>
     </div>
-  </section>
+  </div>
+</section>
 {% endblock %}
