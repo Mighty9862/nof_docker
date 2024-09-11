@@ -91,6 +91,15 @@ a {
   height: 570px;
 }
 
+.dep-card:hover {
+  background: white;
+  color: black;
+}
+
+.dep-link {
+color: rgb(45, 170, 95);
+  }
+
 .card:hover {
   background: rgb(50, 50, 50);
   color: white;

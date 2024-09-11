@@ -1,0 +1,167 @@
+{% extends "navbar.html" %}
+<body>
+  <!-- Навигация -->
+  {% block content %}
+
+  <body>
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-lg-1"></div>
+
+        <div class="col-lg-10 col-md-12">
+          <div class="main-body">
+            <h2>Научный кружок кафедры ИБ УНК ИТ</h2>
+            <div class="row gutters-sm">
+              <div class="col-md-4 mb-3">
+                <div class="dep-card card">
+                  <div class="card-body">
+                    <div
+                      class="d-flex flex-column align-items-center text-center"
+                    >
+                      <img
+                        src="../static/images/лого факультета.png"
+                        alt="Admin"
+                        class="rounded-circle"
+                        width="150"
+                      />
+                      <div class="mt-3">
+                        <h4>Ad opus!</h4>
+                        <h6>Руководители кружка:</h6>
+                        <p class="text-secondary mb-1">
+                          Начальник кафедры ИБ УНК ИТ Гончар В.В.
+                        </p>
+                        <p class="text-muted font-size-sm">
+                          Старший преподаватель кафедры ИБ УНК ИТ Полянская Е.П.
+                        </p>
+                        <a href="#" class="btn btn-primary">Вступить</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dep-card card mt-3">
+                  <ul class="list-group list-group-flush">
+                    <li
+                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+                    >
+                      <h6 class="mb-0">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-telegram"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"
+                          />
+                        </svg>
+                        Telegram-канал
+                      </h6>
+                      <span class="text-secondary"
+                        ><a
+                          class="dep-link"
+                          href="https://t.me/FPSOIB_IB_YNK_IT"
+                          >Научный кружок кафедры ИБ</a
+                        ></span
+                      >
+                    </li>
+                    <li
+                      class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
+                    >
+                      <h6 class="mb-0">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="feather feather-globe mr-2 icon-inline"
+                        >
+                          <circle cx="12" cy="12" r="10"></circle>
+                          <line x1="2" y1="12" x2="22" y2="12"></line>
+                          <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                          ></path>
+                        </svg>
+                        Сайт
+                      </h6>
+                      <span class="text-secondary"
+                        ><a
+                          class="dep-link"
+                          href="https://nkkibynkit.taplink.ws/"
+                          >Научный кружок кафедры ИБ УНК ИТ</a
+                        ></span
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-8">
+                <div class="dep-card card mb-3">
+                  <div class="card-body">
+                    <h4>Актуальные мероприятия:</h4>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Мероприятие</th>
+                          <th scope="col">Действия</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>GIGA CONF</td>
+                          <td>
+                            <button type="submit" class="btn btn-primary">
+                              Принять участие
+                            </button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Цифровая криминалистика</td>
+                          <td>
+                            <button type="submit" class="btn btn-primary">
+                              Принять участие
+                            </button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>MTS True Tech Day</td>
+                          <td>
+                            <button type="submit" class="btn btn-primary">
+                              Принять участие
+                            </button>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <th scope="row">4</th>
+                          <td>Tinkoff CTF</td>
+                          <td>
+                            <button type="submit" class="btn btn-primary">
+                              Принять участие
+                            </button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</body>
