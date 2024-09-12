@@ -2,7 +2,25 @@
 <body>
   <!-- Навигация -->
   {% block content %}
+<style>
+  .dep-card:hover {
+  background: white;
+  color: black;
 
+  .btn-primary {
+    background-color: white;
+    color: rgb(45, 170, 95);
+    border-color: rgb(45, 170, 95);
+  }
+
+  
+  .btn-primary:hover {
+    background-color: rgb(45, 170, 95);
+    color: white;
+    border-color: rgb(45, 170, 95);
+  }
+}
+</style>
   <body>
     <div class="container-fluid mt-4">
       <div class="row">
@@ -13,7 +31,7 @@
             <h2>Научный кружок кафедры ИБ УНК ИТ</h2>
             <div class="row gutters-sm">
               <div class="col-md-4 mb-3">
-                <div class="dep-card card">
+                <div class="card dep-card">
                   <div class="card-body">
                     <div
                       class="d-flex flex-column align-items-center text-center"
@@ -38,7 +56,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="dep-card card mt-3">
+                <div class=" card dep-card mt-3">
                   <ul class="list-group list-group-flush">
                     <li
                       class="list-group-item d-flex justify-content-between align-items-center flex-wrap"
@@ -102,7 +120,7 @@
                 </div>
               </div>
               <div class="col-md-8">
-                <div class="dep-card card mb-3">
+                <div class=" card dep-card mb-3">
                   <div class="card-body">
                     <h4>Актуальные мероприятия:</h4>
                     <table class="table">

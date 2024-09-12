@@ -2,7 +2,9 @@
 <body>
   <!-- Навигация -->
   {% block content %}
+<style>
 
+</style>
   <!-- Основной контент -->
   <section>
     <div class="container-fluid mt-4">
@@ -22,7 +24,7 @@
                   {% if post.id in user_events %}
                   <a
                     href="{{ url_for('leave_event', event_id=post.id) }}"
-                    class="btn exit-btn btn-primary"
+                    class="btn exit-btn"
                     >Отказаться от участия</a
                   >
                   {% else %}
