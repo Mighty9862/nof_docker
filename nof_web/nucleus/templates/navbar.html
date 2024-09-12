@@ -38,19 +38,19 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link {{status2}}" href="{{url_for('games')}}"
-                >Игры</a
-              >
+              <a class="nav-link {{status2}}" href="{{url_for('games')}}">Игры</a>
             </li>
 
             {% if current_user.is_authenticated %}
-            <li class="nav-link" href="departmentList.html">Кружки кафедр</li>
+            <li class="nav-link">
+               <a class="nav-link {{status3}}" href="{{url_for('departments')}}">Кружки кафедр</a>
+            </li>
+
             <li class="nav-item">
               <a
                 class="nav-link {{status4}}"
                 href="{{ url_for('profile', user_id=current_user.login) }}"
-                >Личный кабинет</a
-              >
+                >Личный кабинет</a>
             </li>
             <li class="nav-item">
               <a class="nav-link {{status5}}" href="{{ url_for('rating') }}"

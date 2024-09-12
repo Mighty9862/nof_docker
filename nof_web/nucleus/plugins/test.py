@@ -5,7 +5,7 @@ from nucleus.decorators import is_admin
 
 
 from nucleus import app, db
-from nucleus.models import Post, Post_Games, User, UserEvent
+from nucleus.models import Post, Post_Games, User, UserEvent, Departmen_Model
 
 def create_data_from_bd():
     hash_pwd = generate_password_hash('admin')
@@ -14,14 +14,17 @@ def create_data_from_bd():
     new_user2 = User(login='test', password=hash_pwd2, role='user', first_name='Станислав', last_name='Помещиков', middle_name='Евгеньевич', faculty='ФПСОИБ', course='2', rating='0')
     post = Post(title='TEST', short_body='TEST', full_body='TEST', img='../static/images/news/pink-red-nebula-space-cosmos-4k-7m-3840x2400.jpg', status='Внешнее мероприятие')
     game = Post_Games(title='TEST', body='TEST', img='../static/images/games/pink-red-nebula-space-cosmos-4k-7m-3840x2400.jpg')
+    dep = Departmen_Model(title='Информационной безопасности УНК ИТ')
 
     User.query.delete()
     Post.query.delete()
     Post_Games.query.delete()
     UserEvent.query.delete()
+    Departmen_Model.query.delete()
 
     db.session.add(new_user)
     db.session.add(new_user2)
     db.session.add(post)
     db.session.add(game)
+    db.session.add(dep)
     db.session.commit()

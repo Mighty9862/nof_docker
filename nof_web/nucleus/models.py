@@ -42,6 +42,11 @@ class UserEvent(db.Model):
     user = db.relationship('User', backref=db.backref('events', lazy=True))
     event = db.relationship('Post_Games', backref=db.backref('participants', lazy=True))
 
+class Departmen_Model(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(300), nullable=False)
+
+
 
 
 @manager.user_loader
