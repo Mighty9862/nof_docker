@@ -45,6 +45,7 @@ class UserEvent(db.Model):
 class Departmen_Model(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(300), nullable=False)
+    img = db.Column(db.Text, nullable=False)
 
 
 

@@ -87,10 +87,13 @@ a {
 }
 
 .game-card {
-  width: 600px;
-  height: 570px;
+  width: 520px;
+  height: 580px;
 }
 
+.game-card img {
+  height: cover;
+}
 
 .dep-link {
   color: rgb(45, 170, 95);
@@ -150,8 +153,8 @@ a {
 }
 
 .card-img-top {
-  height: 450px;
-  object-fit: cover;
+  height: 340px;
+  object-fit:cover;
 }
 
 .game-img {

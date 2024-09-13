@@ -32,9 +32,8 @@ def departments():
 @app.route('/departments/<int:dep_id>')
 @login_required 
 def department(dep_id):    
-    deps = Departmen_Model.query.all()
-    #user_events = {event.event_id for event in UserEvent.query.filter_by(user_id=current_user.id).all()}
-    return render_template('department.html', title='Кружки кафедр', status3='active', deps=deps)
+    dep = Departmen_Model.query.filter_by(id=dep_id).first()
+    return render_template('department.html', title='Кружки кафедр', status3='active', dep=dep)
 
 
 @app.route('/join_event/<int:event_id>')
