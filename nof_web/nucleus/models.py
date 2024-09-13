@@ -45,6 +45,10 @@ class UserEvent(db.Model):
 class Departmen_Model(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(300), nullable=False)
+    small_title = db.Column(db.String(300), nullable=False)
+    name_krug = db.Column(db.String(300), nullable=False)
+    nach_krug = db.Column(db.String(300), nullable=False)
+    prepod_krug = db.Column(db.String(300), nullable=False)
     img = db.Column(db.Text, nullable=False)
 
 

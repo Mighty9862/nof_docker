@@ -43,7 +43,11 @@ def create_data_from_bd():
     game3 = Post_Games(title='Киберполицейские', body='Игра строится в формате «своей игры», где команды, состоящие из 5 человек должны ответить на ряд вопросов по различным направлениям ИБ, таким как криптография, социальная инженерия, всё про IT и многие другие.',
                        img='../static/images/games/cyberpolice.jpg')
     
-    dep = Departmen_Model(title='Информационной безопасности УНК ИТ', img='../static/images/departments/logo.png')
+    dep1 = Departmen_Model(title='Информационной безопасности УНК ИТ', img='../static/images/departments/logo.png', small_title='ИБ УНК ИТ',
+                          name_krug='Ad opus!', nach_krug = 'Начальник кафедры ИБ УНК ИТ Гончар В.В.', prepod_krug='Старший преподаватель кафедры ИБ УНК ИТ Полянская Е.П.')
+    
+    dep2 = Departmen_Model(title='Естественнонаучных дисциплин УНК ИТ', img='../static/images/departments/logo.png', small_title='ЕНД УНК ИТ',
+                          name_krug='', nach_krug = 'Начальник кафедры Булгаков В.Г.', prepod_krug='Преподаватель кафедры Таранина Е.И.')
 
     User.query.delete()
     Post.query.delete()
@@ -62,5 +66,7 @@ def create_data_from_bd():
     db.session.add(game2)
     db.session.add(game3)
 
-    db.session.add(dep)
+    db.session.add(dep1)
+    db.session.add(dep2)
+
     db.session.commit()
